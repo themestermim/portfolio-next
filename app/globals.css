@@ -1,0 +1,125 @@
+@tailwind base;
+:root {
+    --theme-background: 15, 23, 42;
+    --theme-primary: 34, 211, 238;
+    --theme-secondary: 100, 116, 139;
+    --theme-accent: 244, 244, 244;
+    --theme-white: 255, 255, 255;
+}
+@tailwind components;
+@layer components {
+	.c-btn {
+        @apply rounded-lg relative overflow-hidden flex items-center justify-center gap-1 px-6 disabled:opacity-80 disabled:pointer-events-none border transition-all duration-300;
+
+        &.btn-primary-fill {
+            @apply text-background bg-transparent bg-gradient-to-r from-primary to-primary border-primary before:absolute before:content-[''] before:top-0 before:right-0 before:w-2/3 before:h-full before:bg-gradient-to-l before:from-secondary/75 before:to-transparent before:transition-all before:duration-300 before:opacity-0 hover:before:opacity-100;
+
+            * {
+                @apply relative z-10;
+            }
+        }
+
+        /* &.btn-primary-outline {
+            @apply bg-white text-primary-500 border-primary-500 hover:border-primary-400 hover:text-primary-400 focus:bg-primary-100/40 focus:text-primary-600 focus:border-primary-600 active:bg-primary-100/40 active:text-primary-600 active:border-primary-600 disabled:bg-white disabled:border-primary-100 disabled:text-primary-100;
+        }
+
+        &.btn-primary-text {
+            @apply bg-transparent text-primary-500 border-transparent hover:text-primary-400 focus:bg-primary-100/40 focus:text-primary-600 active:bg-primary-100/40 active:text-primary-600 disabled:bg-white disabled:border-primary-100 disabled:text-primary-100;
+        }
+
+        &.btn-gray-text {
+            @apply bg-transparent text-gray-700 border-transparent hover:text-gray-800 focus:bg-gray-200/40 focus:text-gray-800 active:bg-gray-200/40 active:text-gray-800 disabled:bg-white disabled:border-gray-200 disabled:text-gray-200;
+        }
+
+        &.btn-dark-outline {
+            @apply bg-white text-gray-800 border-gray-500 hover:border-gray-800 focus:bg-gray-200 disabled:border-gray-500 disabled:text-gray-500 disabled:pointer-events-none;
+        }
+
+        &.btn-error-fill {
+            @apply text-white bg-red-500 border-red-500 hover:border-red-400 hover:bg-red-400 focus:bg-red-600 active:bg-red-600 disabled:bg-red-100;
+            svg {
+                @apply text-white;
+            }
+        } */
+
+        /* &.btn-sm {
+            @apply h-7 text-sm font-medium min-w-30;
+
+            svg {
+                @apply size-5;
+            }
+        } */
+
+        &.btn-md {
+            @apply h-10 text-base font-medium;
+
+            svg {
+                @apply size-5;
+            }
+        }
+
+        /* &.btn-lg {
+            @apply h-11 text-base font-medium min-w-45;
+
+            svg {
+                @apply size-6;
+            }
+        } */
+
+        /* &.btn-xl {
+            @apply h-12 text-xl font-medium min-w-52;
+
+            svg {
+                @apply size-7;
+            }
+        } */
+
+        /* &.btn-full {
+            @apply w-full;
+        }
+
+        &.btn-w-auto {
+            @apply min-w-fit;
+        } */
+
+        /* span {
+        } */
+    }
+}
+
+@tailwind utilities;
+
+@font-face {
+	font-family: BonyadeKoodak;
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("/assets/fonts/koodak/regular.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: BonyadeKoodak;
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url("/assets/fonts/koodak/medium.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: BonyadeKoodak;
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url("/assets/fonts/koodak/bold.woff2") format("woff2");
+}
+
+
+
+html {
+    @apply font-koodak;
+    direction: rtl;
+}
+
+body {
+    @apply bg-background text-white;
+}
