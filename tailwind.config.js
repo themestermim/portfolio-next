@@ -11,14 +11,12 @@ module.exports = {
     },
 
     fontFamily: {
-      'koodak': 'BonyadeKoodak',
+      'estedad': 'Estedad',
     },
     screens: {
       'xs': '480px',
-      // 'sm': '640px',
       'md': '768px',
       'lg': '1024px',
-      // 'xl': '1280px',
     },
     colors: {
         white: 'rgb(var(--theme-white), <alpha-value>)',
@@ -26,10 +24,15 @@ module.exports = {
         primary: 'rgb(var(--theme-primary), <alpha-value>)',
         secondary: 'rgb(var(--theme-secondary), <alpha-value>)',
         accent: 'rgb(var(--theme-accent), <alpha-value>)',
+        dark: 'rgb(var(--theme-dark), <alpha-value>)',
         current: "currentColor",
         transparent: "transparent",
     },
-    extend: {},
+    extend: {
+      spacing: {
+        '79': '19.75rem',
+      },
+    },
   },
   plugins: [],
 }

@@ -5,6 +5,7 @@
     --theme-secondary: 100, 116, 139;
     --theme-accent: 244, 244, 244;
     --theme-white: 255, 255, 255;
+    --theme-dark: 29, 31, 33;
 }
 @tailwind components;
 @layer components {
@@ -13,6 +14,14 @@
 
         &.btn-primary-fill {
             @apply text-background bg-transparent bg-gradient-to-r from-primary to-primary border-primary before:absolute before:content-[''] before:top-0 before:right-0 before:w-2/3 before:h-full before:bg-gradient-to-l before:from-secondary/75 before:to-transparent before:transition-all before:duration-300 before:opacity-0 hover:before:opacity-100;
+
+            * {
+                @apply relative z-10;
+            }
+        }
+
+        &.btn-dark-fill {
+            @apply text-accent bg-transparent bg-gradient-to-r from-background to-background border-background before:absolute before:content-[''] before:top-0 before:right-0 before:w-2/3 before:h-full before:bg-gradient-to-l before:from-secondary/75 before:to-transparent before:transition-all before:duration-300 before:opacity-0 hover:before:opacity-100;
 
             * {
                 @apply relative z-10;
@@ -42,13 +51,13 @@
             }
         } */
 
-        /* &.btn-sm {
-            @apply h-7 text-sm font-medium min-w-30;
+        &.btn-sm {
+            @apply h-10 text-sm font-medium;
 
             svg {
                 @apply size-5;
             }
-        } */
+        }
 
         &.btn-md {
             @apply h-10 text-base font-medium;
@@ -74,11 +83,15 @@
             }
         } */
 
-        /* &.btn-full {
+        &.btn-full {
             @apply w-full;
         }
 
-        &.btn-w-auto {
+        &.btn-center {
+            @apply justify-center;
+        }
+
+        /* &.btn-w-auto {
             @apply min-w-fit;
         } */
 
@@ -90,36 +103,61 @@
 @tailwind utilities;
 
 @font-face {
-	font-family: BonyadeKoodak;
+	font-family: Estedad;
 	font-style: normal;
 	font-weight: 400;
 	font-display: swap;
-	src: url("/assets/fonts/koodak/regular.woff2") format("woff2");
+	src: url("/assets/fonts/estedad/regular.woff2") format("woff2");
 }
 
 @font-face {
-	font-family: BonyadeKoodak;
+	font-family: Estedad;
 	font-style: normal;
 	font-weight: 500;
 	font-display: swap;
-	src: url("/assets/fonts/koodak/medium.woff2") format("woff2");
+	src: url("/assets/fonts/estedad/medium.woff2") format("woff2");
 }
 
 @font-face {
-	font-family: BonyadeKoodak;
+	font-family: Estedad;
 	font-style: normal;
 	font-weight: 700;
 	font-display: swap;
-	src: url("/assets/fonts/koodak/bold.woff2") format("woff2");
+	src: url("/assets/fonts/estedad/bold.woff2") format("woff2");
 }
 
 
 
 html {
-    @apply font-koodak;
+    @apply font-estedad;
     direction: rtl;
 }
 
 body {
-    @apply bg-background text-white;
+    @apply bg-background text-white cursor-default;
+}
+
+.unique-title {
+    @apply pb-3 before:absolute before:content-[''] before:h-1 before:w-16 before:rounded-sm before:bg-gradient-to-r before:from-primary before:to-secondary before:bottom-0 before:left-1/2 before:-translate-x-1/2;
+}
+
+@keyframes scroll {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(50%);
+	}
+}
+
+@media screen and (min-width: 1024px) {
+    .marquee-list:hover {
+        .marquee {
+            animation-play-state: paused;
+        }
+    }
+}
+
+.marquee {
+    animation: scroll 25s linear infinite;
 }
