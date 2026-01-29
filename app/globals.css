@@ -6,6 +6,7 @@
     --theme-accent: 244, 244, 244;
     --theme-white: 255, 255, 255;
     --theme-dark: 29, 31, 33;
+    --theme-error: 255, 200, 200;
 }
 @tailwind components;
 @layer components {
@@ -28,29 +29,6 @@
             }
         }
 
-        /* &.btn-primary-outline {
-            @apply bg-white text-primary-500 border-primary-500 hover:border-primary-400 hover:text-primary-400 focus:bg-primary-100/40 focus:text-primary-600 focus:border-primary-600 active:bg-primary-100/40 active:text-primary-600 active:border-primary-600 disabled:bg-white disabled:border-primary-100 disabled:text-primary-100;
-        }
-
-        &.btn-primary-text {
-            @apply bg-transparent text-primary-500 border-transparent hover:text-primary-400 focus:bg-primary-100/40 focus:text-primary-600 active:bg-primary-100/40 active:text-primary-600 disabled:bg-white disabled:border-primary-100 disabled:text-primary-100;
-        }
-
-        &.btn-gray-text {
-            @apply bg-transparent text-gray-700 border-transparent hover:text-gray-800 focus:bg-gray-200/40 focus:text-gray-800 active:bg-gray-200/40 active:text-gray-800 disabled:bg-white disabled:border-gray-200 disabled:text-gray-200;
-        }
-
-        &.btn-dark-outline {
-            @apply bg-white text-gray-800 border-gray-500 hover:border-gray-800 focus:bg-gray-200 disabled:border-gray-500 disabled:text-gray-500 disabled:pointer-events-none;
-        }
-
-        &.btn-error-fill {
-            @apply text-white bg-red-500 border-red-500 hover:border-red-400 hover:bg-red-400 focus:bg-red-600 active:bg-red-600 disabled:bg-red-100;
-            svg {
-                @apply text-white;
-            }
-        } */
-
         &.btn-sm {
             @apply h-10 text-sm font-medium;
 
@@ -67,22 +45,6 @@
             }
         }
 
-        /* &.btn-lg {
-            @apply h-11 text-base font-medium min-w-45;
-
-            svg {
-                @apply size-6;
-            }
-        } */
-
-        /* &.btn-xl {
-            @apply h-12 text-xl font-medium min-w-52;
-
-            svg {
-                @apply size-7;
-            }
-        } */
-
         &.btn-full {
             @apply w-full;
         }
@@ -90,13 +52,50 @@
         &.btn-center {
             @apply justify-center;
         }
+    }
 
-        /* &.btn-w-auto {
-            @apply min-w-fit;
-        } */
+    .c-form-group {
+        @apply flex flex-col gap-1.5;
 
-        /* span {
-        } */
+        .input {
+            @apply w-full border border-transparent rounded-lg bg-background transition focus:outline-none px-2 text-base placeholder:text-secondary text-accent focus:border-white;
+        }
+
+        .text {
+            @apply h-10;
+        }
+        
+        .description {
+            @apply h-40 py-2 resize-none;
+        }
+
+        .notif-row {
+            @apply hidden text-xs font-normal items-center;
+        }
+
+        .notif {
+            @apply flex items-center gap-1.5 text-accent bg-accent/10 px-3 py-1 rounded-xl border border-accent transition;
+        }
+
+        &.has-notif {
+            .notif-row {
+                @apply flex;
+            }
+        }
+        
+        &.has-error {
+            .input {
+                @apply border-error;
+            }
+
+            .notif-row {
+                @apply flex;
+            }
+
+            .notif {
+                @apply text-error bg-error/10 border-error;
+            }
+        }
     }
 }
 
@@ -125,7 +124,6 @@
 	font-display: swap;
 	src: url("/assets/fonts/estedad/bold.woff2") format("woff2");
 }
-
 
 
 html {

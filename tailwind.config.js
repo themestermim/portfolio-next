@@ -25,12 +25,14 @@ module.exports = {
         secondary: 'rgb(var(--theme-secondary), <alpha-value>)',
         accent: 'rgb(var(--theme-accent), <alpha-value>)',
         dark: 'rgb(var(--theme-dark), <alpha-value>)',
+        error: 'rgb(var(--theme-error), <alpha-value>)',
         current: "currentColor",
         transparent: "transparent",
     },
     extend: {
       spacing: {
-        '79': '19.75rem',
+        '76': '19rem',
+        '84': '21rem',
       },
     },
   },
