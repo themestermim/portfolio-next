@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useContext } from "react";
 import HomeContext from "@/app/contexts/HomeContext";
 import Link from "next/link";
